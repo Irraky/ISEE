@@ -41,7 +41,7 @@ int   timeReadableFormat(int timeInSeconds) {
 }
 
 // check remaining time and return it in readable format
-int calculTempsRenstant(int timeElapsed) {
+int calculRemainingTime(int timeElapsed) {
   int minutes = (timeInSeconds - timeElapsed) / 60;
   int seconds = (timeInSeconds - timeElapsed) % 60;
   return (minutes * 100 + seconds);
@@ -234,7 +234,7 @@ void loop() {
       // calcul remaining time
       timeElapsed = 1 + (millis() - timeStart) / 1000;
       // calcul time in readable format
-      timeReadable = calculTempsRenstant(timeElapsed);
+      timeReadable = calculRemainingTime(timeElapsed);
       Serial.println(timeElapsed);
       // print remaining time
       displayTime(timeReadable);
